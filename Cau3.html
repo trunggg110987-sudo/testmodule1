@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(n){
+        if(n < 2) return false;
+        if(n === 2) return true;
+        if(n % 2 ===0) return false;
+        for (let i = 3; i <= Math.sqrt(n); i+= 2) {
+            if(n % i === 0) return false;
+        }
+        return true;
+    }
+    function findPrime(arr){
+        let prime = arr.filter(isPrime);
+        prime.sort((a,b) => a-b);
+        return prime;
+    }
+    let inputArr = [10, 3, 7, 8, 5, 12, 2];
+    let result = findPrime(inputArr);
+    document.write("Mảng số nguyên tố : " + result);
+
+</script>
+</body>
+</html>
