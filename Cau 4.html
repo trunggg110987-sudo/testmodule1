@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let phone = function(id, name, year, price) {
+        this.id = id;
+        this.name = name;
+        this.year = year;
+        this.price = price;
+
+
+        this.getId = function() { return this.id; }
+        this.getName = function() { return this.name; }
+        this.getYear = function() { return this.year; }
+        this.getPrice = function() { return this.price; }
+
+
+        this.setId = function(newId) { this.id = newId; }
+        this.setName = function(newName) { this.name = newName; }
+        this.setYear = function(newYear) { this.year = newYear; }
+        this.setPrice = function(newPrice) { this.price = newPrice; }
+
+
+        this.toString = function() {
+            return "Mã: " + this.id + ", Tên: " + this.name + ", Năm: " + this.year + ", Giá: " + this.price;
+        }
+    }
+
+
+    let danhsachDT = [
+        new phone("DT01", "iPhone 14prm", "Apple", 3000),
+        new phone("DT02", "Galaxy S23", "Samsung", 2500),
+        new phone("DT03", "Xiaomi 13", "Xiaomi", 1500)
+    ]
+
+
+    function hienThiDanhSach() {
+
+        let dsSapXep = [...danhsachDT].sort(function(a, b) {
+            return a.name.localeCompare(b.name);
+        });
+
+        document.write("<h3>Danh sách điện thoại:</h3>");
+        dsSapXep.forEach(function(dt) {
+            document.write(dt.toString() + "<br>");
+        });
+    }
+
+
+    function themDienThoai() {
+        let ma = prompt("Nhập mã điện thoại:");
+        let ten = prompt("Nhập tên điện thoại:");
+        let hang = prompt("Nhập hãng sản xuất:");
+        let gia = Number(prompt("Nhập giá điện thoại:"));
+
+        let dtMoi = new phone(ma, ten, hang, gia);
+        danhsachDT.push(dtMoi);
+
+        document.write("<h3>Danh sách sau khi thêm:</h3>");
+        hienThiDanhSach();
+    }
+
+
+    hienThiDanhSach();
+    themDienThoai();
+
+</script>
+</body>
+</html>
