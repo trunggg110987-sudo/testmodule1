@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhập số phần tử vào mảng (n <= 20)");
+    if(n > 20 || n <=0){
+        alert("số phần tử vùa nhập không hợp lệ")
+    }else{
+        let arr =[];
+        let tongChan = 0;
+        let tongLe = 0;
+
+        for (let i = 0; i < n; i++) {
+            let value = parseInt(prompt("Nhập phần tử thứ " + (i + 1)))
+            arr.push(value);
+
+            if(value % 2 === 0){
+                tongChan += value;
+            }else{
+                tongLe += value;
+            }
+        }
+        document.write("Mảng vừa nhập: " + arr.join(", ") + "<br>");
+        document.write("Tổng các số chẵn: " + tongChan + "<br>");
+        document.write("Tổng các số lẻ: " + tongLe + "<br>");
+        document.write(" Hiệu (chẵn - lẻ) = " + (tongChan - tongLe));
+    }
+
+</script>
+</body>
+</html>

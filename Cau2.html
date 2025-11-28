@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function countUpperCase(str){
+        let count = 0;
+        for (let i = 0; i < str.length; i++) {
+            let c = str[i]
+            if(c >= "A" && c <= "Z"){
+                count++;
+            }
+        }
+        if(count > 0){
+            return count;
+        }else{
+            return ("The Strings is not contain upper char")
+        }
+    }
+
+    let inputStr = prompt("nhap vao 1 chuoi ky tu");
+    let result = countUpperCase(inputStr);
+    document.write("kết quả : " + result);
+</script>
+</body>
+</html>
